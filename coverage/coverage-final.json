@@ -1,0 +1,2 @@
+{"D:\\FRONT END\\tataiana\\src\\index.js": {"path":"D:\\FRONT END\\tataiana\\src\\index.js","statementMap":{"0":{"start":{"line":2,"column":4},"end":{"line":2,"column":16}}},"fnMap":{"0":{"name":"sum","decl":{"start":{"line":1,"column":24},"end":{"line":1,"column":27}},"loc":{"start":{"line":1,"column":34},"end":{"line":3,"column":1}},"line":1}},"branchMap":{},"s":{"0":1},"f":{"0":1},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"45af953d4b3395c2b0ef337bd33b4dbad52f5b00"}
+}
