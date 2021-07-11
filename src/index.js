@@ -1,8 +1,9 @@
-export function sum(a, b) {
-    return a + b;
-}
+import "regenerator-runtime/runtime";
 
-export function prod(a, b) {
-    return a * b;
-}
+import React from "react";
+import ReactDOM from 'react-dom';
+//import App from './App'
+import LoginForm from './Form'
 
+//ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<LoginForm />, document.getElementById('form'))
