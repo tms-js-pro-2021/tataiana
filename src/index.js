@@ -6,4 +6,4 @@ import ReactDOM from 'react-dom';
 import LoginForm from './Form'
 
 //ReactDOM.render(<App />, document.getElementById('app'))
-ReactDOM.render(<LoginForm />, document.getElementById('form'))
+ReactDOM.render(<LoginForm />, document.getElementById('app'))
