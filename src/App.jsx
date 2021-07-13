@@ -10,6 +10,7 @@ export default function App() {
       console.log("unmounting");
     };
   }, []);
+
   const handleLoginClick = () => {
     setLogin("");
   };
@@ -24,5 +25,3 @@ export default function App() {
     </div>
   );
 }
-
-
