@@ -3,16 +3,27 @@ import { useFormik } from 'formik';
 import React from 'react';
 import { object, string } from 'yup';
 import { TextField, Button, Box } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 export default function LoginPage() {
+  const { push } = useHistory();
   const formik = useFormik({
     initialValues: {
       login: '',
       password: '',
     },
     onSubmit: (values) => {
-      // eslint-disable-next-line no-alert
-      alert(JSON.stringify(values, null, 2));
+      fetch('https://uoxfu.sse.codesandbox.io/login', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      }).then((res) => {
+        if (res.status === 200) push('/');
+        else res.text().then((errorString) => alert(errorString));
+      });
       formik.resetForm();
     },
     validateOnChange: false,
