@@ -1,7 +1,7 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
-// eslint-disable-next-line object-curly-newline
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Route, Link, Switch,
+} from 'react-router-dom';
 import LoginPage from './LoginPage';
 import TodoPage from './Todo/TodoPage';
 
