@@ -33,7 +33,7 @@ function TodoPage() {
       }}
     >
       <h1>Todo List</h1>
-      <AddTodo />
+      <AddTodo todo={todo} setTodo={setTodo} />
       <TodoList todo={todo} setTodo={setTodo} />
     </Container>
   );
