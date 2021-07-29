@@ -4,27 +4,11 @@ import TodoList from './TodoList';
 import AddTodo from './AddTodo';
 
 function TodoPage() {
-  const [todo, setTodo] = useState([
-    {
-      id: '1',
-      title: 'hhhhh',
-      status: true,
-    },
-    {
-      id: '2',
-      title: 'jjjj',
-      status: true,
-    },
-    {
-      id: '3',
-      title: 'oooo',
-      status: false,
-    },
-  ]);
+  const [todo, setTodo] = useState([]);
 
   return (
     <Container
-      m={1}
+      m={2}
       style={{
         height: '40vh',
         width: '100vw',

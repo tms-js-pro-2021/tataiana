@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TextField, Button } from '@material-ui/core';
 
 function AddTodo({ todo, setTodo }) {
   const [value, setValue] = useState('');
@@ -16,13 +17,32 @@ function AddTodo({ todo, setTodo }) {
   }
 
   return (
-    <div>
-      <input
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        alignItems: 'baseline',
+        marginBottom: '24px',
+        padding: '6px',
+        background: 'lavender',
+      }}
+    >
+      <TextField
+        id="standard-basic"
+        label=""
         placeholder="add todo"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={saveTodo}>сохранить</button>
+      <Button
+        style={{ marginLeft: '12px' }}
+        variant="contained"
+        color="primary"
+        onClick={saveTodo}
+      >
+        save
+      </Button>
     </div>
   );
 }

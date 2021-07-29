@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { Button } from '@material-ui/core';
 
 function TodoList({ todo, setTodo }) {
   const [edit, setEdit] = useState('');
   const [value, setValue] = useState('');
+  // eslint-disable-next-line no-console
+  console.log(todo);
 
   function deleteTodo(id) {
     const newTodoList = [...todo].filter((item) => item.id !== id);
@@ -12,6 +15,7 @@ function TodoList({ todo, setTodo }) {
   function statusTodo(id) {
     const newTodoList = [...todo].filter((item) => {
       if (item.id === id) {
+        // eslint-disable-next-line no-param-reassign
         item.status = !item.status;
       }
       return item;
@@ -27,6 +31,7 @@ function TodoList({ todo, setTodo }) {
   function saveTodo(id) {
     const newTodo = [...todo].map((item) => {
       if (item.id === id) {
+        // eslint-disable-next-line no-param-reassign
         item.title = value;
       }
       return item;
@@ -38,25 +43,73 @@ function TodoList({ todo, setTodo }) {
   return (
     <div>
       {todo.map((item) => (
-        <div key={item.id}>
+        <div
+          key={item.id}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            alignItems: 'baseline',
+            marginBottom: '24px',
+            padding: '6px',
+            background: 'lavender',
+          }}
+        >
           {edit === item.id ? (
             <div>
               <input value={value} onChange={(e) => setValue(e.target.value)} />
             </div>
           ) : (
-            <div>{item.title}</div>
+            <div
+              key={item.id}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                flexDirection: 'row',
+                marginBottom: '24px',
+                padding: '6px',
+              }}
+            >
+              {item.title}
+            </div>
           )}
           {edit === item.id ? (
             <div>
-              <button onClick={() => saveTodo(item.id)}>save</button>
+              <Button
+                style={{ marginRight: '12px' }}
+                variant="contained"
+                color="primary"
+                onClick={() => saveTodo(item.id)}
+              >
+                save
+              </Button>
             </div>
           ) : (
             <div>
-              <button onClick={() => deleteTodo(item.id)}>delete</button>
-              <button onClick={() => editTodo(item.id, item.title)}>
+              <Button
+                style={{ marginLeft: '12px' }}
+                variant="contained"
+                color="primary"
+                onClick={() => deleteTodo(item.id)}
+              >
+                delete
+              </Button>
+              <Button
+                style={{ marginLeft: '12px' }}
+                variant="contained"
+                color="primary"
+                onClick={() => editTodo(item.id, item.title)}
+              >
                 edit
-              </button>
-              <button onClick={() => statusTodo(item.id)}>open/done</button>
+              </Button>
+              <Button
+                style={{ marginLeft: '12px' }}
+                variant="contained"
+                color="primary"
+                onClick={() => statusTodo(item.id)}
+              >
+                done
+              </Button>
             </div>
           )}
         </div>
