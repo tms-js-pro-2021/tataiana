@@ -22,6 +22,7 @@ export default function LoginPage() {
         },
       }).then((res) => {
         if (res.status === 200) push('/');
+        // eslint-disable-next-line no-alert
         else res.text().then((errorString) => alert(errorString));
       });
       formik.resetForm();
